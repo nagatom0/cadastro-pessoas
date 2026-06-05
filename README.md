@@ -1,29 +1,22 @@
-# Desafio Técnico — Cadastro de Pessoas
-Esta é uma solução full-stack para o case de cadastro de pessoas, desenvolvida em uma arquitetura microsserviços no backend e uma interface simples no frontend.
+# Como Executar o Projeto
+
+# Pré-requisitos
+A maneira recomendada de executar todo o projeto é usando o Docker Compose.
+- [Docker](https://www.docker.com/products/docker-desktop/) instalado.
 
 
-# Arquitetura do Sistema
+# Executar o Docker Compose
+Na pasta raiz do projeto, execute o comando abaixo para construir e iniciar todos os serviços:
 
-1. Frontend (React + TS + Vite): Interface de usuário com formulário simples de cadastro, máscaras nos inputs e validação.
-2. Person Service (Backend - FastAPI): Microsserviço responsável pelas regras de cadastro de pessoas, validação dos inputs (CPF, data de nascimento e formato do nome) e integração de CEP.
-3. Login Service (Backend - FastAPI): Microsserviço responsável pela geração e reserva de logins únicos.
-4. Banco de Dados (PostgreSQL 16): Banco relacional com dois schemas isolados (`person_db` e `login_db`).
+`  docker compose up --build  `
 
-# Tecnologias Utilizadas
-
-# Backend
-- FastAPI: Framework Python para construção de APIs.
-- Pydantic v2: Validação de esquemas e tipos de dados.
-- SQLAlchemy: ORM para manipulação e mapeamento do banco de dados.
-- Alembic: Gerenciamento de migrations do banco de dados.
-- Httpx: Cliente HTTP assíncrono para comunicação entre serviços.
-
-# Frontend
-- React + TypeScript: Biblioteca para a construção da interface.
-- Vite: Ferramenta de build rápida para o desenvolvimento frontend.
-
-# Infraestrutura
-- Docker & Docker Compose: Containerização e orquestração de todo o ambiente de desenvolvimento.
+Os seguintes serviços estarão disponíveis:
+- Frontend: `http://localhost:5173`
+- Person Service (API): `http://localhost:8000`
+- Person Service (API DOCS): `http://localhost:8000/docs`
+- Login Service (API): `http://localhost:8001`
+- Login Service (API DOCS): `http://localhost:8001/docs`
+- Banco de Dados (Postgres): Porta `5432`
 
 # Lógica de Geração e Garantia de Unicidade do Login
 
@@ -66,23 +59,3 @@ Para cumprir todos os requisitos do case, a geração do login segue o seguinte 
 - O CEP limpa caracteres especiais e valida se possui exatamente 8 dígitos.
 - Autopreenchimento de Endereço, Cidade, Bairro e Estado consultando de forma assíncrona a API pública do ViaCEP.
 - Permissão para o usuário inserir o número da residência.
-
-# Como Executar o Projeto
-
-A maneira recomendada de executar todo o projeto é usando o Docker Compose.
-
-# Pré-requisitos
-- [Docker](https://www.docker.com/products/docker-desktop/) instalado.
-
-# Executar o Docker Compose
-Na pasta raiz do projeto, execute o comando abaixo para construir e iniciar todos os serviços:
-
-`  docker compose up --build  `
-
-Os seguintes serviços estarão disponíveis:
-- Frontend: `http://localhost:5173`
-- Person Service (API): `http://localhost:8000`
-- Person Service (API DOCS): `http://localhost:8000/docs`
-- Login Service (API): `http://localhost:8001`
-- Login Service (API DOCS): `http://localhost:8001/docs`
-- Banco de Dados (Postgres): Porta `5432`
