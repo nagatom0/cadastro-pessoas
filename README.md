@@ -1,11 +1,11 @@
 # Como Executar o Projeto
 
-# Pré-requisitos
+## Pré-requisitos
 A maneira recomendada de executar todo o projeto é usando o Docker Compose.
 - [Docker](https://www.docker.com/products/docker-desktop/) instalado.
 
 
-# Executar o Docker Compose
+## Executar o Docker Compose
 Na pasta raiz do projeto, execute o comando abaixo para construir e iniciar todos os serviços:
 
 `  docker compose up --build  `
@@ -34,28 +34,28 @@ Para cumprir todos os requisitos do case, a geração do login segue o seguinte 
 
 # Regras de Validação Implementadas
 
-# Nome Completo
+## Nome Completo
 - Obrigatório.
 - Apenas letras de `A-Z` (sem caracteres especiais, til, cedilhas ou acentos).
 - Espaços nas extremidades são removidos.
 - É obrigatório informar pelo menos nome e sobrenome (mínimo de 2 nomes).
 
-# CPF (Documento Escolhido)
+## CPF (Documento Escolhido)
 - Obrigatório.
 - Remoção automática de pontuações (`.` e `-`) para persistência limpa de 11 dígitos.
 - Validação matemática completa utilizando o algoritmo oficial da Receita Federal (validação do primeiro e do segundo dígito verificador).
 - Bloqueio automático de sequências inválidas conhecidas (como `111.111.111-11`).
 
-# E-mail
+## E-mail
 - Obrigatório.
 - Validação estrutural pelo Pydantic (`EmailStr`).
 
-# Data de Nascimento
+## Data de Nascimento
 - Obrigatório.
 - Conversão segura para objeto de data.
 - Impedimento de inserção de datas no futuro (limite máximo igual a `date.today()`).
 
-# CEP e Endereço
+## CEP e Endereço
 - O CEP limpa caracteres especiais e valida se possui exatamente 8 dígitos.
 - Autopreenchimento de Endereço, Cidade, Bairro e Estado consultando de forma assíncrona a API pública do ViaCEP.
 - Permissão para o usuário inserir o número da residência.
