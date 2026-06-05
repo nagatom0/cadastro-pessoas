@@ -69,13 +69,13 @@ Para cumprir todos os requisitos do case, a geração do login segue o seguinte 
 
 # Como Executar o Projeto
 
-A maneira recomendada de executar todo o ecossistema é usando o Docker Compose.
+A maneira recomendada de executar todo o projeto é usando o Docker Compose.
 
 # Pré-requisitos
 - [Docker](https://www.docker.com/products/docker-desktop/) instalado.
 
 # Executar o Docker Compose
-Na raiz do projeto, execute o comando abaixo para construir e iniciar todos os serviços (Frontend, Backend Services e PostgreSQL):
+Na pasta raiz do projeto, execute o comando abaixo para construir e iniciar todos os serviços:
 
 `  docker compose up --build  `
 
