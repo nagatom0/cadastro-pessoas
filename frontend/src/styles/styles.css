@@ -1,0 +1,86 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f4f5f7;
+  color: #1f2330;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 { margin-top: 0; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.field input {
+  padding: 10px 12px;
+  border: 1px solid #d4d7e0;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #4f6bed;
+}
+
+.error { color: #d23f3f; font-size: 13px; margin-top: 4px; }
+.api-error { color: #d23f3f; font-size: 14px; margin-bottom: 12px; }
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #FF6200;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.login-badge {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: #eef1fd;
+  color: #4f6bed;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 12px 0 20px;
+}
+
+.readonly-input {
+    background-color: #a3a3a3;
+    color: #ffffff;
+    cursor: not-allowed;
+}

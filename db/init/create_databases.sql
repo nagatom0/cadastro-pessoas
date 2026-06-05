@@ -1,0 +1,2 @@
+CREATE DATABASE login_db;
+CREATE DATABASE person_db;
